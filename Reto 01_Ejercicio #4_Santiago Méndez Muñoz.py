@@ -1,3 +1,4 @@
+#Ejercicio 4
 def list(list_amount):
     number_list = []
     
@@ -24,4 +25,5 @@ def list(list_amount):
     print("La suma mayor entre los numeros consecutivos", number_list[new_j], " y ", number_list[new_j+1], " es igual a: ", max_add)
 
 new_list_amount = int(input("Ingrese la cantidad de numeros de la lista: "))
+
 print(list(new_list_amount))
