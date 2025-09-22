@@ -1,3 +1,4 @@
+#Ejercicio 3
 def prime(num):
     if num < 2:
         return False
@@ -37,3 +38,4 @@ def list(list_amount):
 
 new_list_amount = int(input("Ingrese la cantidad de numeros de la lista: "))
 print(list(new_list_amount))
+
