@@ -1,19 +1,27 @@
 #Ejercicio 5
-def filter_same_caracters(list):
-    groups = []   # lista de grupos (cada grupo será otra lista)
+def filter_same_caracters(lista):
+    groups = []          #Lista de grupos
+    usados = set()       #Conjunto para guardar palabras ya agrupadas
 
-    for i in range(len(list)):
-        word1 = list[i]
+    for i in range(len(lista)):
+        word1 = lista[i]
+
+        #Si ya está usada, la saltamos
+        if word1 in usados:
+            continue
+
         sorted1 = "".join(sorted(word1))
         group = [word1]
+        usados.add(word1)   #La marcamos como usada
 
-        # Buscar otras palabras que tengan los mismos caracteres
-        for j in range(i + 1, len(list)):
-            word2 = list[j]
+        #Buscamos otras palabras con los mismos caracteres con este for
+        for j in range(i + 1, len(lista)):
+            word2 = lista[j]
             sorted2 = "".join(sorted(word2))
 
             if sorted1 == sorted2:
                 group.append(word2)
+                usados.add(word2)  #La volvemos a marcar como usada
 
         # Si el grupo tiene más de un elemento, lo guardamos
         if len(group) > 1:
@@ -21,12 +29,12 @@ def filter_same_caracters(list):
 
     return groups
 
-list = []
-list_size = int(input("Digame el tamaño de la lista: "))
+
+lista = []
+list_size = int(input("Dígame el tamaño de la lista: "))
 for i in range(list_size):
-    word = str(input(f"Ingrese la palabra #{i+1}: "))
-    list.append(word)
+    word = input(f"Ingrese la palabra #{i+1}: ")
+    lista.append(word)
 
-
-print(filter_same_caracters(list))
-
+print("Los grupos encontrados son:")
+print(filter_same_caracters(lista))
