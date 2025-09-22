@@ -1,3 +1,4 @@
+#Ejercicio 5
 def filter_same_caracters(list):
     groups = []   # lista de grupos (cada grupo será otra lista)
 
@@ -28,3 +29,4 @@ for i in range(list_size):
 
 
 print(filter_same_caracters(list))
+
